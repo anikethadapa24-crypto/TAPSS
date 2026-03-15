@@ -1,2 +1,12 @@
 # Optional local Firebase config (do not commit real keys)
 firebase-config.local.js
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.idea
+.vscode
+*.swp
+*.swo
