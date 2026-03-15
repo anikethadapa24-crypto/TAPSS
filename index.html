@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TAPSS | Texas Association of Primary Science Students</title>
+  <link rel="icon" href="assets/tapss-logo.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+</head>
+<body class="bg-galaxy" data-bg="galaxy">
+
+  <header class="navbar">
+    <a href="#" class="logo" aria-label="TAPSS Home">
+      <img src="assets/tapss-logo.png" alt="TAPSS — Texas Association of Primary Science Students" class="logo-img">
+    </a>
+    <div id="bg-switcher" class="bg-switcher" aria-label="Background">
+      <span class="bg-switcher-label">Background</span>
+      <button type="button" id="bg-btn-black" class="bg-switcher-btn" data-bg="black" aria-pressed="false">Black</button>
+      <button type="button" id="bg-btn-galaxy" class="bg-switcher-btn" data-bg="galaxy" aria-pressed="true">Galaxy</button>
+    </div>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#programs">Programs</a>
+      <a href="#team">Team</a>
+      <a href="#impact">Impact</a>
+      <a href="science-blitz.html">Science Blitz</a>
+      <a href="#join">Join</a>
+      <a href="#discord">Discord</a>
+      <a href="#new-members">New Members</a>
+    </nav>
+    <a href="https://forms.gle/ioaYC65XRksWTWyX6" class="nav-cta" target="_blank" rel="noopener noreferrer">Join TAPSS</a>
+    <button class="nav-toggle" type="button" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hex-grid"></div>
+        <div class="molecule-orbits">
+          <div class="orbit orbit-1"></div>
+          <div class="orbit orbit-2"></div>
+          <div class="orbit orbit-3"></div>
+        </div>
+        <div class="equations-bg" aria-hidden="true">
+          <div class="equation-slot slot-0" data-slot="0"></div>
+          <div class="equation-slot slot-1" data-slot="1"></div>
+          <div class="equation-slot slot-2" data-slot="2"></div>
+          <div class="equation-slot slot-3" data-slot="3"></div>
+          <div class="equation-slot slot-4" data-slot="4"></div>
+          <div class="equation-slot slot-5" data-slot="5"></div>
+          <div class="equation-slot slot-6" data-slot="6"></div>
+          <div class="equation-slot slot-7" data-slot="7"></div>
+        </div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-logo hero-anim">
+          <img src="assets/tapss-logo.png" alt="TAPSS — Texas Association of Primary Science Students" class="hero-logo-img">
+        </div>
+        <h1 class="hero-title">
+          <span id="hero-title-typed" aria-live="polite"></span><span class="typed-cursor" aria-hidden="true">|</span>
+        </h1>
+        <p class="hero-sub">
+          <span id="hero-sub-typed" aria-live="polite"></span>
+        </p>
+        <div class="hero-buttons hero-buttons-init">
+          <a href="science-blitz.html" class="btn btn-primary">Play Science Blitz</a>
+          <a href="https://forms.gle/ioaYC65XRksWTWyX6" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Join TAPSS</a>
+          <a href="#programs" class="btn btn-secondary">Learn About Competitions</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="section-inner">
+        <div class="hex-accent" aria-hidden="true"></div>
+        <div class="section-logo-wrap scroll-animate">
+          <img src="assets/tapss-logo.png" alt="" class="section-logo" aria-hidden="true">
+        </div>
+        <h2 class="section-title scroll-animate">About TAPSS</h2>
+        <div class="about-content">
+          <p>TAPSS (Texas Association of Primary Science Students) is a student-led nonprofit dedicated to promoting scientific curiosity, innovation, and community impact.</p>
+          <p>Students develop and present original science experiments through competitions hosted by TAPSS. Winning projects are standardized into low-cost science kits that volunteers teach in community settings such as churches, orphanages, and youth centers.</p>
+          <p>The goal is to transform student innovation into accessible STEM education for underserved communities.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="programs" class="section programs">
+      <div class="section-inner">
+        <div class="section-logo-wrap scroll-animate">
+          <img src="assets/tapss-logo.png" alt="" class="section-logo" aria-hidden="true">
+        </div>
+        <h2 class="section-title scroll-animate">Our Programs</h2>
+        <div class="cards">
+          <article class="card scroll-animate">
+            <div class="card-icon card-icon-1" aria-hidden="true"></div>
+            <h3>Student Science Competitions</h3>
+            <p>Students design and present research-driven experiments in competitive events similar to science fairs.</p>
+          </article>
+          <article class="card scroll-animate">
+            <div class="card-icon card-icon-2" aria-hidden="true"></div>
+            <h3>Community STEM Kits</h3>
+            <p>Winning experiments are converted into affordable kits that can be taught to children in community workshops.</p>
+          </article>
+          <article class="card scroll-animate">
+            <div class="card-icon card-icon-3" aria-hidden="true"></div>
+            <h3>Community Science Workshops</h3>
+            <p>Volunteers and TAPSS students teach hands-on science lessons at community sites across Austin.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="team" class="section team-section">
+      <div class="section-inner">
+        <div class="section-logo-wrap scroll-animate">
+          <img src="assets/tapss-logo.png" alt="" class="section-logo" aria-hidden="true">
+        </div>
+        <h2 class="section-title scroll-animate">Leadership Team</h2>
+        <div class="team-grid">
+          <div class="member-card member-card-with-bio">
+            <div class="member-avatar">
+              <img src="assets/team/aniketh-adapa.png" alt="Aniketh Adapa">
+            </div>
+            <h3>Aniketh Adapa</h3>
+            <p>Founder</p>
+            <p class="member-bio">Hey! I am Aniketh Adapa, and I founded the Texas Association of Primary Science Students (TAPSS) to empower student innovators to transform scientific curiosity into real-world impact. Through TAPSS, I lead initiatives that turn student research into accessible STEM education for underserved communities.</p>
+          </div>
+          <div class="member-card member-card-with-bio">
+            <div class="member-avatar">
+              <img src="assets/team/charan-nagireddy.png" alt="Charan Nagireddy">
+            </div>
+            <h3>Charan Nagireddy</h3>
+            <p>Co-Founder</p>
+            <p class="member-bio">I am Charan Nagireddy, the co-founder of the Texas Association of Primary Science Students. I have a strong passion for biology and enjoy exploring scientific ideas and discoveries. Outside of academics, I love playing basketball, which has helped me develop teamwork, discipline, and perseverance. I am also a confident speaker and enjoy participating in activities like Model United Nations (MUN), where I can practice debate, diplomacy, and communication. Through science, sports, and public speaking, I strive to continue learning, leading, and making a positive impact in my community.</p>
+          </div>
+          <div class="member-card member-card-with-bio">
+            <div class="member-avatar">
+              <img src="assets/team/neha-chinni.png" alt="Neha Chinni">
+            </div>
+            <h3>Neha Chinni</h3>
+            <p>Philanthropy Coordinator</p>
+            <p class="member-bio">Hi, my name is Neha Chinni, a freshman at Rouse High School! I am excited to serve as the Philanthropy Coordinator. I am super excited to be a part of this organization and look forward to contributing my time, creativity, and leadership to support its mission! I am actively involved in several other clubs including MUN, HOSA, and Speech and Debate.</p>
+          </div>
+          <div class="member-card member-card-with-bio">
+            <div class="member-avatar">
+              <img src="assets/team/archit-sawalapukar.png" alt="Archit Sawalapukar">
+            </div>
+            <h3>Archit Sawalapukar</h3>
+            <p>Outreach Director</p>
+            <p class="member-bio">Hey, I'm Archit and I'm a student at Rouse High School! I am a driven and curious individual with a deep passion for technology and science, always seeking new ways to challenge myself and create meaningful impact. I bring genuine enthusiasm and a natural desire to leave things better than I found them, and I'm looking forward to contributing what I can to TAPSS.</p>
+          </div>
+          <div class="member-card member-card-with-bio">
+            <div class="member-avatar">
+              <img src="assets/team/venkata-mokshith-nakka.png" alt="Venkata Mokshith Nakka">
+            </div>
+            <h3>Venkata Mokshith Nakka</h3>
+            <p>Event Director</p>
+            <p class="member-bio">I am a 9th grade Event Coordinator who loves health science and STEM. I plan exciting science events to help students learn new things in fun ways. I am so happy to help our non-profit grow this year.</p>
+          </div>
+          <div class="member-card member-card-with-bio">
+            <div class="member-avatar">
+              <img src="assets/team/samrita-kolli.png" alt="Samrita Kolli">
+            </div>
+            <h3>Samrita Kolli</h3>
+            <p>Co-Philanthropy Director</p>
+            <p class="member-bio">Hi! I'm Samrita Kolli, and I'm so excited to serve as the Co-Philanthropy Director for TAPSS. I enjoy helping organize fundraisers and initiatives that create meaningful opportunities for students. Through TAPSS, I hope to make a positive impact on students and inspire younger learners to explore and enjoy science. I'm grateful to be part of TAPSS and help make a difference through science and service.</p>
+          </div>
+          <div class="member-card member-card-with-bio">
+            <div class="member-avatar">
+              <img src="assets/team/tanvi-dontireddy.png" alt="Tanvi Dontireddy">
+            </div>
+            <h3>Tanvi Dontireddy</h3>
+            <p>Social Media Manager</p>
+            <p class="member-bio">Hi! I’m Tanvi, and I’m a freshman at Rouse High School. I’m looking forward to being the Social Media Manager for TAPSS. I’ll be managing our social media page and sharing updates about events and activities. I look forward to helping teach younger students about science and getting them excited to learn and explore new ideas!</p>
+          </div>
+          <div class="member-card member-card-with-bio">
+            <div class="member-avatar">
+              <img src="assets/team/syed-hussain.png" alt="Syed Hussain">
+            </div>
+            <h3>Syed Hussain</h3>
+            <p>Marketing Director</p>
+            <p class="member-bio">Hi, I'm Syed Hussain. I'm a freshman at Rouse specializing in strategic marketing and outreach development. Currently, I serve as the Marketing Officer for TAPSS and Outreach Director for Harmonize, where I focus on building marketing skills and community partnerships. I've always been driven by team performance, whether that's leading my basketball team to three gold medals or competing in Model UN. My goal is to bridge the gap between creative strategy and operational leadership. I'm looking to apply this competitive drive and strategic mindset to a future career in Business Management. Outside school, I find fun and peace through fishing or riding my gas bike with friends.</p>
+          </div>
+          <div class="member-card">
+            <div class="member-avatar"><span>R</span></div>
+            <h3>Rutvik Madadi</h3>
+            <p>Secretary</p>
+          </div>
+          <div class="member-card member-card-with-bio">
+            <div class="member-avatar">
+              <img src="assets/team/avantika-rajesh.png" alt="Avantika Rajesh">
+            </div>
+            <h3>Avantika Rajesh</h3>
+            <p>Finance Coordinator</p>
+            <p class="member-bio">Hi! I'm Avantika and I'm a freshman at Rouse. I look forward to being one of the officers for TAPSS and helping kids experiment and enjoy science 🧪!!</p>
+            <p class="member-funfact"><strong>Fun Fact:</strong> I want to work in London</p>
+          </div>
+        </div>
+        <h3 class="team-subtitle">Members</h3>
+        <div class="team-grid team-grid-small">
+          <div class="member-card member-card-small">
+            <h3>Aishwarya Konety</h3>
+            <p>Member</p>
+          </div>
+          <div class="member-card member-card-small">
+            <h3>Shreyas Ambati</h3>
+            <p>Member</p>
+          </div>
+          <div class="member-card member-card-small">
+            <h3>Nidhi Moluguri</h3>
+            <p>Member</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="impact" class="section impact">
+      <div class="section-inner">
+        <div class="section-logo-wrap scroll-animate">
+          <img src="assets/tapss-logo.png" alt="" class="section-logo" aria-hidden="true">
+        </div>
+        <h2 class="section-title scroll-animate">Join Now to Make an Actual Impact...</h2>
+        <p class="impact-intro">We're a newly developing organization. Our impact starts with you—join us to help grow these numbers from the ground up.</p>
+        <div class="impact-dashboard">
+          <div class="stat-card scroll-animate">
+            <div class="stat-value" data-target="0" data-duration="2000">0</div>
+            <div class="stat-label">Students to Engage</div>
+          </div>
+          <div class="stat-card scroll-animate">
+            <div class="stat-value" data-target="0" data-duration="2000">0</div>
+            <div class="stat-label">Science Projects to Develop</div>
+          </div>
+          <div class="stat-card scroll-animate">
+            <div class="stat-value" data-target="0" data-duration="2000">0</div>
+            <div class="stat-label">STEM Kits to Distribute</div>
+          </div>
+          <div class="stat-card scroll-animate">
+            <div class="stat-value" data-target="0" data-duration="2000">0</div>
+            <div class="stat-label">Community Workshops to Host</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="lab-builder" class="section blitz-cta-section">
+      <div class="section-inner blitz-cta-inner">
+        <div class="blitz-cta-badge scroll-animate">Competition</div>
+        <h2 class="section-title blitz-cta-title scroll-animate">TAPSS Science Blitz</h2>
+        <p class="blitz-cta-desc scroll-animate">Answer science questions in 3 minutes. Climb the leaderboard. Top performers can win a gift card. No account required—just enter your name and play.</p>
+        <a href="science-blitz.html" class="btn btn-primary btn-blitz-cta scroll-animate">Play Science Blitz</a>
+
+        <div id="blitz-home-leaderboard-wrap" class="blitz-home-leaderboard-wrap">
+          <h3 class="blitz-leaderboard-title">Competition Leaderboard</h3>
+          <p class="blitz-leaderboard-desc">Names are stored encrypted. Your rank, time, points, and correctness appear after you play. Top scores can win a gift card!</p>
+          <div class="blitz-home-leaderboard-table-wrap">
+            <table class="blitz-leaderboard-table blitz-home-leaderboard-table">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Name</th>
+                  <th>Time</th>
+                  <th>Points</th>
+                  <th>Correct</th>
+                </tr>
+              </thead>
+              <tbody id="blitz-home-leaderboard-body"></tbody>
+            </table>
+          </div>
+          <a href="science-blitz.html#blitz-leaderboard" class="btn btn-secondary btn-blitz-view-full">View full leaderboard</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Removed: full Blitz game moved to science-blitz.html -->
+    <div style="display:none;"><!--
+            <p class="blitz-login-desc">Use your Gmail to enter the competition. After signing in, you’ll enter your first and last name, then play the Blitz.</p>
+            <button type="button" id="blitz-google-btn" class="btn btn-primary blitz-google-btn" aria-busy="false">Sign in with Google</button>
+            <p class="blitz-login-hint">You will be taken to Google to sign in, then returned here.</p>
+          </div>
+          <div id="blitz-name-section" class="blitz-login-section blitz-name-section">
+            <p class="blitz-login-title">Almost there — confirm your name</p>
+            <form id="blitz-name-form" class="blitz-name-form">
+              <label for="blitz-first-name">First name</label>
+              <input type="text" id="blitz-first-name" class="blitz-input" required placeholder="First name" autocomplete="given-name">
+              <label for="blitz-last-name">Last name</label>
+              <input type="text" id="blitz-last-name" class="blitz-input" required placeholder="Last name" autocomplete="family-name">
+              <button type="submit" id="blitz-name-submit" class="btn btn-primary">Continue to Blitz</button>
+            </form>
+          </div>
+        </div>
+
+        <div id="blitz-game-wrap" class="blitz-game-wrap blitz-hidden">
+          <div class="blitz-user-bar">
+            <span class="blitz-user-label">Playing as: <strong id="blitz-user-display">—</strong></span>
+            <button type="button" id="blitz-different-name-btn" class="btn blitz-logout-btn">Use a different name</button>
+          </div>
+          <div id="science-blitz-game" class="science-blitz-game blitz-hidden">
+          <!-- Start screen -->
+          <div id="sb-start" class="sb-screen sb-start sb-active">
+            <div class="sb-rules">
+              <p>⏱ <strong>3 minutes</strong> on the clock</p>
+              <p>🔬 Answer multiple-choice science questions</p>
+              <p>⭐ Correct answers earn <strong>Research Points</strong></p>
+              <p>🧠 Your score becomes your <strong>Impact Score</strong></p>
+            </div>
+            <button type="button" id="sb-start-btn" class="btn btn-primary btn-sb-start">Start Game</button>
+          </div>
+
+          <!-- Game screen (hidden until start) -->
+          <div id="sb-play" class="sb-screen sb-play" aria-hidden="true">
+            <div class="sb-header">
+              <div class="sb-timer-wrap">
+                <span class="sb-timer-label">Time</span>
+                <span id="sb-timer" class="sb-timer">3:00</span>
+              </div>
+              <div class="sb-score-wrap">
+                <span class="sb-score-label">Points</span>
+                <span id="sb-score" class="sb-score">0</span>
+              </div>
+            </div>
+            <div class="sb-question-wrap">
+              <p id="sb-question" class="sb-question"></p>
+              <div id="sb-answers" class="sb-answers"></div>
+            </div>
+            <p id="sb-feedback" class="sb-feedback" aria-live="polite"></p>
+          </div>
+
+          <!-- Results screen (hidden until game over) -->
+          <div id="sb-results" class="sb-screen sb-results" aria-hidden="true">
+            <h3 class="sb-results-title">Time's up!</h3>
+            <div class="sb-results-stats">
+              <div class="sb-results-row">
+                <span class="sb-results-label">Research Points</span>
+                <span id="sb-final-score" class="sb-results-value">0</span>
+              </div>
+              <div class="sb-results-row sb-impact-row">
+                <span class="sb-results-label">Impact Score</span>
+                <span id="sb-impact-score" class="sb-results-value">0</span>
+              </div>
+              <div class="sb-results-row">
+                <span class="sb-results-label">Correct answers</span>
+                <span id="sb-correct-count" class="sb-results-value">0</span>
+              </div>
+            </div>
+            <button type="button" id="sb-play-again" class="btn btn-primary">Play Again</button>
+          </div>
+        </div>
+
+        <!-- Leaderboard -->
+        <div id="blitz-leaderboard" class="blitz-leaderboard">
+          <h3 class="blitz-leaderboard-title">🏆 Competition Leaderboard</h3>
+          <p class="blitz-leaderboard-desc">Names are stored encrypted. Your rank, time, points, and correctness appear after you play. Top scores can win a gift card!</p>
+          <div class="blitz-leaderboard-table-wrap">
+            <table class="blitz-leaderboard-table">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Name</th>
+                  <th>Time</th>
+                  <th>Points</th>
+                  <th>Correct</th>
+                </tr>
+              </thead>
+              <tbody id="blitz-leaderboard-body"></tbody>
+            </table>
+          </div>
+        </div>
+    --></div>
+
+    <section id="join" class="section join">
+      <div class="section-inner">
+        <div class="hex-accent hex-accent-join" aria-hidden="true"></div>
+        <div class="section-logo-wrap scroll-animate">
+          <img src="assets/tapss-logo.png" alt="" class="section-logo" aria-hidden="true">
+        </div>
+        <h2 class="section-title scroll-animate">Join the TAPSS Movement</h2>
+        <p class="join-intro">TAPSS is looking for passionate people who want to turn student science into community impact:</p>
+        <ul class="join-list">
+          <li>Student scientists</li>
+          <li>Volunteers</li>
+          <li>Educators</li>
+          <li>Community partners</li>
+        </ul>
+        <a href="https://forms.gle/ioaYC65XRksWTWyX6" class="btn btn-primary btn-join" target="_blank" rel="noopener noreferrer">Apply to Join TAPSS</a>
+      </div>
+    </section>
+
+    <section id="discord" class="section discord-cta">
+      <div class="section-inner">
+        <div class="section-logo-wrap scroll-animate">
+          <img src="assets/tapss-logo.png" alt="" class="section-logo" aria-hidden="true">
+        </div>
+        <h2 class="section-title scroll-animate">Join Our Discord Community</h2>
+        <p class="discord-intro scroll-animate">Connect with fellow student scientists, volunteers, and educators. Get updates, share ideas, and stay in the loop with TAPSS.</p>
+        <a href="https://discord.gg/MBVTuCBR" class="btn btn-primary btn-discord scroll-animate" target="_blank" rel="noopener noreferrer">Join Discord</a>
+      </div>
+    </section>
+
+    <section id="new-members" class="section new-members-cta">
+      <div class="section-inner">
+        <div class="new-members-content scroll-animate">
+          <h2 class="section-title">We're Growing — Join Us</h2>
+          <p class="new-members-pitch">TAPSS is expanding and welcoming new members. Be part of a team that turns student science into real STEM kits for underserved communities. Fill out our membership form and start making an impact today.</p>
+          <a href="https://forms.gle/ioaYC65XRksWTWyX6" class="btn btn-primary btn-join" target="_blank" rel="noopener noreferrer">Become a Member</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="assets/tapss-logo.png" alt="TAPSS — Texas Association of Primary Science Students" class="footer-logo-img">
+        <p class="footer-mission">Transforming student innovation into accessible STEM education for underserved communities.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="#about">About</a>
+        <a href="#programs">Programs</a>
+        <a href="#team">Team</a>
+        <a href="#impact">Impact</a>
+        <a href="science-blitz.html">Science Blitz</a>
+        <a href="#join">Join</a>
+        <a href="#discord">Discord</a>
+        <a href="#new-members">New Members</a>
+      </nav>
+      <div class="footer-social">
+        <span class="footer-social-label">Follow us</span>
+        <a href="https://www.instagram.com/taps.squared/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="#" class="social-link" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#" class="social-link" aria-label="Twitter">Twitter</a>
+      </div>
+      <p class="footer-copy">© 2026 Texas Association of Primary Science Students</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="blitz-home-leaderboard.js"></script>
+</body>
+</html>

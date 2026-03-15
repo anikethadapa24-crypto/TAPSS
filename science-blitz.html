@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TAPSS Science Blitz | Compete & Win</title>
+  <link rel="icon" href="assets/tapss-logo.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+</head>
+<body class="science-blitz-page">
+
+  <header class="navbar">
+    <a href="index.html" class="logo" aria-label="TAPSS Home">
+      <img src="assets/tapss-logo.png" alt="TAPSS — Texas Association of Primary Science Students" class="logo-img">
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#programs">Programs</a>
+      <a href="index.html#impact">Impact</a>
+      <a href="science-blitz.html" class="nav-blitz-active">Science Blitz</a>
+      <a href="index.html#join">Join</a>
+    </nav>
+    <a href="https://forms.gle/ioaYC65XRksWTWyX6" class="nav-cta" target="_blank" rel="noopener noreferrer">Join TAPSS</a>
+    <button class="nav-toggle" type="button" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <section class="blitz-page-hero">
+      <div class="blitz-hero-content">
+        <img src="assets/tapss-logo.png" alt="" class="blitz-hero-logo" aria-hidden="true">
+        <h1 class="blitz-hero-title">TAPSS Science Blitz</h1>
+        <p class="blitz-hero-sub">Answer science questions in 3 minutes. Climb the leaderboard. Top performers can win a gift card.</p>
+      </div>
+    </section>
+
+    <section class="section lab-builder lab-builder-game blitz-page-game">
+      <div class="section-inner">
+        <p class="lab-builder-intro">Enter your name to play. Your name is stored encrypted on the leaderboard. No account required.</p>
+
+        <div id="blitz-name-required" class="blitz-login-required">
+          <p class="blitz-login-required-title">Enter your name to play</p>
+          <p class="blitz-login-required-desc">Your name will appear on the leaderboard (stored in encrypted form).</p>
+          <form id="blitz-name-form" class="blitz-name-form blitz-name-form-inline">
+            <label for="blitz-first-name">First name</label>
+            <input type="text" id="blitz-first-name" class="blitz-input" required placeholder="First name" autocomplete="given-name">
+            <label for="blitz-last-name">Last name</label>
+            <input type="text" id="blitz-last-name" class="blitz-input" required placeholder="Last name" autocomplete="family-name">
+            <button type="submit" id="blitz-name-submit" class="btn btn-primary blitz-login-required-btn">Play Science Blitz</button>
+          </form>
+        </div>
+
+        <div id="blitz-game-wrap" class="blitz-game-wrap blitz-hidden">
+          <div class="blitz-user-bar">
+            <span class="blitz-user-label">Playing as: <strong id="blitz-user-display">—</strong></span>
+            <button type="button" id="blitz-different-name-btn" class="btn blitz-logout-btn">Use a different name</button>
+          </div>
+          <div id="science-blitz-game" class="science-blitz-game blitz-hidden">
+            <div id="sb-start" class="sb-screen sb-start sb-active">
+              <div class="sb-rules">
+                <p>&#x23F1; <strong>3 minutes</strong> on the clock</p>
+                <p>&#x1F52C; Answer multiple-choice science questions</p>
+                <p>&#x2B50; Correct answers earn <strong>Research Points</strong></p>
+                <p>&#x1F9E0; Your score becomes your <strong>Impact Score</strong></p>
+              </div>
+              <button type="button" id="sb-start-btn" class="btn btn-primary btn-sb-start">Start Game</button>
+            </div>
+
+            <div id="sb-play" class="sb-screen sb-play" aria-hidden="true">
+              <div class="sb-header">
+                <div class="sb-timer-wrap">
+                  <span class="sb-timer-label">Time</span>
+                  <span id="sb-timer" class="sb-timer">3:00</span>
+                </div>
+                <div class="sb-score-wrap">
+                  <span class="sb-score-label">Points</span>
+                  <span id="sb-score" class="sb-score">0</span>
+                </div>
+              </div>
+              <div class="sb-question-wrap">
+                <p id="sb-question" class="sb-question"></p>
+                <div id="sb-answers" class="sb-answers"></div>
+              </div>
+              <p id="sb-feedback" class="sb-feedback" aria-live="polite"></p>
+            </div>
+
+            <div id="sb-results" class="sb-screen sb-results" aria-hidden="true">
+              <h3 class="sb-results-title">Time's up!</h3>
+              <div class="sb-results-stats">
+                <div class="sb-results-row">
+                  <span class="sb-results-label">Research Points</span>
+                  <span id="sb-final-score" class="sb-results-value">0</span>
+                </div>
+                <div class="sb-results-row sb-impact-row">
+                  <span class="sb-results-label">Impact Score</span>
+                  <span id="sb-impact-score" class="sb-results-value">0</span>
+                </div>
+                <div class="sb-results-row">
+                  <span class="sb-results-label">Correct answers</span>
+                  <span id="sb-correct-count" class="sb-results-value">0</span>
+                </div>
+              </div>
+              <button type="button" id="sb-play-again" class="btn btn-primary">Play Again</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="blitz-leaderboard" class="blitz-leaderboard">
+          <h3 class="blitz-leaderboard-title">&#x1F3C6; Competition Leaderboard</h3>
+          <p class="blitz-leaderboard-desc">Names are stored encrypted. Your rank, time, points, and correctness appear after you play. Top scores can win a gift card!</p>
+          <div class="blitz-leaderboard-table-wrap">
+            <table class="blitz-leaderboard-table">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Name</th>
+                  <th>Time</th>
+                  <th>Points</th>
+                  <th>Correct</th>
+                </tr>
+              </thead>
+              <tbody id="blitz-leaderboard-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer footer-blitz">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="assets/tapss-logo.png" alt="TAPSS" class="footer-logo-img">
+        <p class="footer-mission">Transforming student innovation into accessible STEM education.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="science-blitz.html">Science Blitz</a>
+        <a href="index.html#join">Join</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Texas Association of Primary Science Students</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="science-blitz.js"></script>
+  <script src="blitz-competition.js"></script>
+</body>
+</html>

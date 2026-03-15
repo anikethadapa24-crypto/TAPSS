@@ -1,0 +1,6 @@
+{"sessionId":"55fd38","location":"blitz-competition.js:CONFIG","message":"CONFIG check","data":{"hasConfig":false,"configExists":true},"timestamp":1773595620728,"hypothesisId":"H1"}
+{"sessionId":"55fd38","location":"blitz-competition.js:noFirebase","message":"no Firebase branch","data":{"loginRequiredEl":true,"gameWrap":true,"leaderboardEl":true},"timestamp":1773595620728,"hypothesisId":"H2"}
+{"sessionId":"55fd38","location":"blitz-competition.js:initFirebase","message":"initFirebase entry","data":{"firebaseDefined":true,"configOk":false},"timestamp":1773595620728,"hypothesisId":"H1"}
+{"sessionId":"55fd38","location":"blitz-login.html:CONFIG","message":"CONFIG check","data":{"hasConfig":false,"configExists":true},"timestamp":1773595717175,"hypothesisId":"H1"}
+{"sessionId":"55fd38","location":"blitz-login.html:showError","message":"showError called","data":{"errorElExists":true,"msgLength":87},"timestamp":1773595717175,"hypothesisId":"H2"}
+{"sessionId":"55fd38","location":"blitz-login.html:noFirebase","message":"login page no Firebase","data":{},"timestamp":1773595717175,"hypothesisId":"H3"}
