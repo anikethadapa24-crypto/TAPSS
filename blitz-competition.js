@@ -8,6 +8,7 @@
   var NAME_KEY = 'blitz_player_name';
   var ENC_KEY = 'TAPSS_BLITZ_KEY_2026';
   var MAX_ENTRIES = 50;
+  var ONCE_KEY = 'blitz_played_once';
 
   var nameRequiredEl = document.getElementById('blitz-name-required');
   var gameWrap = document.getElementById('blitz-game-wrap');
@@ -18,6 +19,9 @@
   var nameForm = document.getElementById('blitz-name-form');
   var firstNameInput = document.getElementById('blitz-first-name');
   var lastNameInput = document.getElementById('blitz-last-name');
+  var onceMessageEl = document.getElementById('blitz-once-message');
+  var startBtnEl = document.getElementById('sb-start-btn');
+  var playAgainBtnEl = document.getElementById('sb-play-again');
 
   function encryptName(text) {
     if (!text) return '';
@@ -79,6 +83,37 @@
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
     } catch (e) {}
+  }
+
+  function hasPlayedOnce() {
+    try {
+      return localStorage.getItem(ONCE_KEY) === '1';
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function markPlayedOnce() {
+    try {
+      localStorage.setItem(ONCE_KEY, '1');
+    } catch (e) {}
+  }
+
+  function showOnceLocked() {
+    if (onceMessageEl) onceMessageEl.classList.remove('blitz-hidden');
+    if (nameRequiredEl) nameRequiredEl.classList.add('blitz-hidden');
+    if (gameWrap) gameWrap.classList.add('blitz-hidden');
+    if (startBtnEl) {
+      startBtnEl.disabled = true;
+      startBtnEl.textContent = 'Official run already completed';
+    }
+    if (playAgainBtnEl) {
+      playAgainBtnEl.disabled = true;
+      playAgainBtnEl.textContent = 'Only one official run allowed';
+    }
+    if (differentNameBtn) {
+      differentNameBtn.disabled = true;
+    }
   }
 
   function formatTimeDisplay(totalSeconds, timeRemaining) {
@@ -167,13 +202,20 @@
     list.sort(function (a, b) { return (b.score || 0) - (a.score || 0); });
     if (list.length > MAX_ENTRIES) list = list.slice(0, MAX_ENTRIES);
     setLeaderboard(list);
+    markPlayedOnce();
+    showOnceLocked();
     setTimeout(renderLeaderboard, 100);
   };
 
-  if (getStoredName()) {
-    showGame(getStoredName());
+  if (hasPlayedOnce()) {
+    // Already played on this browser: lock the UI and do not allow another run
+    showOnceLocked();
   } else {
-    showNameForm();
+    if (getStoredName()) {
+      showGame(getStoredName());
+    } else {
+      showNameForm();
+    }
   }
   renderLeaderboard();
 })();
