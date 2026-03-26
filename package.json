@@ -1,0 +1,23 @@
+{
+  "name": "primary",
+  "version": "1.0.0",
+  "description": "Student-led nonprofit website for the **Texas Association of Primary Science Students**, promoting scientific curiosity, innovation, and community impact.",
+  "main": "blitz-competition.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anikethadapa24-crypto/TAPSS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anikethadapa24-crypto/TAPSS/issues"
+  },
+  "homepage": "https://github.com/anikethadapa24-crypto/TAPSS#readme",
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
+  }
+}
