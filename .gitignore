@@ -1,6 +1,9 @@
 # Optional local Firebase config (do not commit real keys)
 firebase-config.local.js
 
+# Dependencies
+node_modules/
+
 # OS
 .DS_Store
 Thumbs.db
