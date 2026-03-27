@@ -129,11 +129,12 @@
 
   function showQuestion() {
     if (!questionEl || !answersEl) return;
-    var q = state.shuffled[state.currentIndex];
-    if (!q) {
-      showQuestion();
-      return;
+    if (state.currentIndex >= state.shuffled.length) {
+      state.shuffled = shuffle(questions);
+      state.currentIndex = 0;
     }
+    var q = state.shuffled[state.currentIndex];
+    if (!q) return;
     questionEl.textContent = q.q;
     answersEl.innerHTML = '';
     q.options.forEach(function (opt, i) {
