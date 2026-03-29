@@ -437,6 +437,7 @@ img {
   margin-bottom: 1.5rem;
 }
 
+/* Black pixels in the PNG show the page background (galaxy or black) instead of a solid box */
 .hero-logo-img {
   width: min(520px, 92vw);
   height: auto;
@@ -444,6 +445,7 @@ img {
   object-fit: contain;
   margin: 0 auto;
   display: block;
+  mix-blend-mode: screen;
 }
 
 .hero-title {
@@ -889,6 +891,22 @@ img {
   object-fit: cover;
   min-height: 180px;
   background: rgba(255, 255, 255, 0.04);
+}
+
+/* Molecular TAPS graphic (opaque black in file) — blend into card instead of a harsh rectangle */
+.fundraising-photo-molecular {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+.fundraising-photo-molecular img {
+  mix-blend-mode: screen;
+  object-fit: contain;
+  min-height: 0;
+  max-height: 280px;
+  padding: 0.75rem 0.5rem;
+  margin: 0 auto;
+  background: transparent;
 }
 
 .fundraising-photo-caption {
