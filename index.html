@@ -15,7 +15,7 @@
   <svg class="hero-clip-defs" aria-hidden="true" width="0" height="0" focusable="false">
     <defs>
       <clipPath id="heroSectorClip" clipPathUnits="objectBoundingBox">
-        <path d="M0,0 L1,0 C0.78,0.3 0.4,0.7 0,1 L0,1 Z" />
+        <path d="M0,0 L1,0 C0.78,0.22 0.48,0.55 0,1 L0,1 Z" />
       </clipPath>
     </defs>
   </svg>
@@ -69,6 +69,29 @@
           </div>
         </div>
         <div class="hero-media-edge" aria-hidden="true"></div>
+      </div>
+      <div class="hero-fold" aria-hidden="true">
+        <svg class="hero-fold-svg" viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
+          <defs>
+            <linearGradient id="heroFoldPaper" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="rgba(8,8,10,0.97)"/>
+              <stop offset="28%" stop-color="rgba(28,28,32,0.98)"/>
+              <stop offset="48%" stop-color="rgba(255,255,255,0.14)"/>
+              <stop offset="58%" stop-color="rgba(0,0,0,0.45)"/>
+              <stop offset="100%" stop-color="rgba(5,5,8,0.99)"/>
+            </linearGradient>
+            <filter id="heroFoldShadow" x="-45%" y="-25%" width="190%" height="150%" color-interpolation-filters="sRGB">
+              <feDropShadow dx="-14" dy="10" stdDeviation="16" flood-color="#000000" flood-opacity="0.6"/>
+            </filter>
+          </defs>
+          <!-- Paper curl: ribbon between galaxy edge and text panel (matches clip-path curve) -->
+          <path
+            class="hero-fold-ribbon"
+            fill="url(#heroFoldPaper)"
+            filter="url(#heroFoldShadow)"
+            d="M100,0 C78,22 48,55 0,100 L8,100 C52,55 84,22 100,0 Z"
+          />
+        </svg>
       </div>
       <div class="hero-content-panel">
         <div class="hero-content">
