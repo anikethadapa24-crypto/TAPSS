@@ -8,11 +8,11 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,900;1,9..40,400&display=swap" rel="stylesheet">
 </head>
-<body class="bg-galaxy" data-bg="galaxy">
+<body class="bg-galaxy site-canvas" data-bg="galaxy">
 
-  <header class="navbar">
+  <header class="navbar" id="site-navbar">
     <a href="#" class="logo" aria-label="TAPSS Home">
       <img src="assets/tapss-logo.png" alt="TAPSS — Texas Association of Primary Science Students" class="logo-img">
     </a>
@@ -91,8 +91,8 @@
       </div>
     </section>
 
-    <section id="programs" class="section programs">
-      <div class="section-inner">
+    <section id="programs" class="section programs section--align-left section--divider-skew">
+      <div class="section-inner section-inner--programs">
         <div class="section-logo-wrap scroll-animate">
           <img src="assets/tapss-logo.png" alt="" class="section-logo" aria-hidden="true">
         </div>
@@ -117,7 +117,7 @@
       </div>
     </section>
 
-    <section id="team" class="section team-section">
+    <section id="team" class="section team-section section--deco-orbit">
       <div class="section-inner">
         <div class="section-logo-wrap scroll-animate">
           <img src="assets/tapss-logo.png" alt="" class="section-logo" aria-hidden="true">
@@ -221,8 +221,9 @@
       </div>
     </section>
 
-    <section id="impact" class="section impact">
-      <div class="section-inner">
+    <section id="impact" class="section impact section--watermark">
+      <div class="section-inner section-inner--impact">
+        <span class="section-watermark" aria-hidden="true">Impact</span>
         <div class="section-logo-wrap scroll-animate">
           <img src="assets/tapss-logo.png" alt="" class="section-logo" aria-hidden="true">
         </div>
@@ -258,7 +259,7 @@
         <p class="fundraising-intro scroll-animate">TAPSS doesn&apos;t just talk about impact—we bake, hunt, and fundraise for it. Here&apos;s how our community has already stepped up.</p>
 
         <div class="fundraising-grid">
-          <article class="fundraising-card scroll-animate">
+          <article class="fundraising-card fundraising-card--standard scroll-animate">
             <h3 class="fundraising-card-title">🧁 Bake Sale</h3>
             <p class="fundraising-card-text">We held a <strong>bake sale</strong> to bring people together and raise funds for STEM kits and community workshops. Thank you to everyone who baked, bought, and supported TAPSS—your sweet treats helped fuel real science education.</p>
             <div class="fundraising-photos fundraising-photos-bake" aria-label="Bake sale photos">
@@ -441,8 +442,8 @@
       </div>
     </section>
 
-    <section id="discord" class="section discord-cta">
-      <div class="section-inner">
+    <section id="discord" class="section discord-cta section--align-left">
+      <div class="section-inner section-inner--discord">
         <div class="section-logo-wrap scroll-animate">
           <img src="assets/tapss-logo.png" alt="" class="section-logo" aria-hidden="true">
         </div>
@@ -464,27 +465,31 @@
   </main>
 
   <footer class="footer">
-    <div class="footer-inner">
+    <div class="footer-inner footer-inner--editorial">
       <div class="footer-brand">
         <img src="assets/tapss-logo.png" alt="TAPSS — Texas Association of Primary Science Students" class="footer-logo-img">
         <p class="footer-mission">Transforming student innovation into accessible STEM education for underserved communities.</p>
       </div>
-      <nav class="footer-nav">
-        <a href="#about">About</a>
-        <a href="#programs">Programs</a>
-        <a href="#team">Team</a>
-        <a href="#impact">Impact</a>
-        <a href="#fundraising">Fundraising</a>
-        <a href="science-blitz.html">Science Blitz</a>
-        <a href="#join">Join</a>
-        <a href="#discord">Discord</a>
-        <a href="#new-members">New Members</a>
-      </nav>
-      <div class="footer-social">
-        <span class="footer-social-label">Follow us</span>
-        <a href="https://www.instagram.com/taps.squared/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="#" class="social-link" aria-label="LinkedIn">LinkedIn</a>
-        <a href="#" class="social-link" aria-label="Twitter">Twitter</a>
+      <div class="footer-links-block">
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="#about">About</a>
+          <a href="#programs">Programs</a>
+          <a href="#team">Team</a>
+          <a href="#impact">Impact</a>
+          <a href="#fundraising">Fundraising</a>
+          <a href="science-blitz.html">Science Blitz</a>
+          <a href="#join">Join</a>
+          <a href="#discord">Discord</a>
+          <a href="#new-members">New Members</a>
+        </nav>
+        <div class="footer-social">
+          <span class="footer-social-label">Follow us</span>
+          <div class="footer-social-links">
+            <a href="https://www.instagram.com/taps.squared/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="#" class="social-link" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" class="social-link" aria-label="Twitter">Twitter</a>
+          </div>
+        </div>
       </div>
       <p class="footer-copy">© 2026 Texas Association of Primary Science Students</p>
     </div>

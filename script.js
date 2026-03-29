@@ -6,6 +6,26 @@
 (function () {
   'use strict';
 
+  var reduceMotion =
+    typeof window.matchMedia !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) {
+    document.documentElement.classList.add('prefers-reduced-motion');
+    document.querySelectorAll('.scroll-animate').forEach(function (el) {
+      el.classList.add('visible');
+    });
+  }
+
+  // ----- Navbar: stronger blur when scrolled -----
+  function initNavbarScroll() {
+    var nav = document.getElementById('site-navbar');
+    if (!nav) return;
+    function onScroll() {
+      nav.classList.toggle('navbar--scrolled', (window.scrollY || window.pageYOffset) > 12);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
   // ----- Background switcher (Black / Galaxy) -----
   var BG_STORAGE = 'tapss_bg';
 
@@ -34,12 +54,13 @@
   }
 
   function initBgSwitcher() {
+    if (!document.getElementById('bg-btn-black') || !document.getElementById('bg-btn-galaxy')) return;
     var mode = getStoredBg();
     setBg(mode);
-    document.getElementById('bg-btn-black') && document.getElementById('bg-btn-black').addEventListener('click', function () {
+    document.getElementById('bg-btn-black').addEventListener('click', function () {
       setBg('black');
     });
-    document.getElementById('bg-btn-galaxy') && document.getElementById('bg-btn-galaxy').addEventListener('click', function () {
+    document.getElementById('bg-btn-galaxy').addEventListener('click', function () {
       setBg('galaxy');
     });
   }
@@ -203,6 +224,7 @@
   window.addEventListener('load', function () {
     initBgSwitcher();
     initCosmosScroll();
+    initNavbarScroll();
     runHeroTyping();
     startEquationSlots();
   });
@@ -287,7 +309,7 @@
     });
   }
 
-  if (typeof IntersectionObserver !== 'undefined') {
+  if (typeof IntersectionObserver !== 'undefined' && !reduceMotion) {
     var observer = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
