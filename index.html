@@ -12,6 +12,14 @@
 </head>
 <body class="bg-galaxy site-canvas" data-bg="galaxy">
 
+  <svg class="hero-clip-defs" aria-hidden="true" width="0" height="0" focusable="false">
+    <defs>
+      <clipPath id="heroSectorClip" clipPathUnits="objectBoundingBox">
+        <path d="M0,0 L1,0 C0.78,0.3 0.4,0.7 0,1 L0,1 Z" />
+      </clipPath>
+    </defs>
+  </svg>
+
   <header class="navbar" id="site-navbar">
     <a href="#" class="logo" aria-label="TAPSS Home">
       <img src="assets/tapss-logo.png" alt="TAPSS — Texas Association of Primary Science Students" class="logo-img">
@@ -39,39 +47,45 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero-bg" aria-hidden="true">
-        <div class="hex-grid"></div>
-        <div class="molecule-orbits">
-          <div class="orbit orbit-1"></div>
-          <div class="orbit orbit-2"></div>
-          <div class="orbit orbit-3"></div>
+    <section class="hero hero-split">
+      <div class="hero-media" aria-hidden="true">
+        <div class="hero-media-bg"></div>
+        <div class="hero-bg" aria-hidden="true">
+          <div class="hex-grid"></div>
+          <div class="molecule-orbits">
+            <div class="orbit orbit-1"></div>
+            <div class="orbit orbit-2"></div>
+            <div class="orbit orbit-3"></div>
+          </div>
+          <div class="equations-bg" aria-hidden="true">
+            <div class="equation-slot slot-0" data-slot="0"></div>
+            <div class="equation-slot slot-1" data-slot="1"></div>
+            <div class="equation-slot slot-2" data-slot="2"></div>
+            <div class="equation-slot slot-3" data-slot="3"></div>
+            <div class="equation-slot slot-4" data-slot="4"></div>
+            <div class="equation-slot slot-5" data-slot="5"></div>
+            <div class="equation-slot slot-6" data-slot="6"></div>
+            <div class="equation-slot slot-7" data-slot="7"></div>
+          </div>
         </div>
-        <div class="equations-bg" aria-hidden="true">
-          <div class="equation-slot slot-0" data-slot="0"></div>
-          <div class="equation-slot slot-1" data-slot="1"></div>
-          <div class="equation-slot slot-2" data-slot="2"></div>
-          <div class="equation-slot slot-3" data-slot="3"></div>
-          <div class="equation-slot slot-4" data-slot="4"></div>
-          <div class="equation-slot slot-5" data-slot="5"></div>
-          <div class="equation-slot slot-6" data-slot="6"></div>
-          <div class="equation-slot slot-7" data-slot="7"></div>
-        </div>
+        <div class="hero-media-edge" aria-hidden="true"></div>
       </div>
-      <div class="hero-content">
-        <div class="hero-logo hero-anim">
-          <img src="assets/events/tapss-molecular-logo.png" alt="TAPSS — Texas Association of Primary Science Students" class="hero-logo-img" width="1024" height="1024">
-        </div>
-        <h1 class="hero-title">
-          <span id="hero-title-typed" aria-live="polite"></span><span class="typed-cursor" aria-hidden="true">|</span>
-        </h1>
-        <p class="hero-sub">
-          <span id="hero-sub-typed" aria-live="polite"></span>
-        </p>
-        <div class="hero-buttons hero-buttons-init">
-          <a href="science-blitz.html" class="btn btn-primary">Play Science Blitz</a>
-          <a href="https://forms.gle/ioaYC65XRksWTWyX6" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Join TAPSS</a>
-          <a href="#programs" class="btn btn-secondary">Learn About Competitions</a>
+      <div class="hero-content-panel">
+        <div class="hero-content">
+          <div class="hero-logo hero-anim">
+            <img src="assets/events/tapss-molecular-logo.png" alt="TAPSS — Texas Association of Primary Science Students" class="hero-logo-img" width="1024" height="1024">
+          </div>
+          <h1 class="hero-title">
+            <span id="hero-title-typed" aria-live="polite"></span><span class="typed-cursor" aria-hidden="true">|</span>
+          </h1>
+          <p class="hero-sub">
+            <span id="hero-sub-typed" aria-live="polite"></span>
+          </p>
+          <div class="hero-buttons hero-buttons-init">
+            <a href="science-blitz.html" class="btn btn-primary">Play Science Blitz</a>
+            <a href="https://forms.gle/ioaYC65XRksWTWyX6" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Join TAPSS</a>
+            <a href="#programs" class="btn btn-secondary">Learn About Competitions</a>
+          </div>
         </div>
       </div>
     </section>

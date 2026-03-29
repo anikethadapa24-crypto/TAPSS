@@ -68,8 +68,9 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
+/* Page chrome: Milky Way lives only in the hero left sector (see .hero-media-bg) */
 body.bg-galaxy {
-  background: #000000 url("assets/milky-way.png") center center / cover fixed no-repeat;
+  background: #060606;
 }
 
 body.bg-black {
@@ -345,21 +346,81 @@ html.prefers-reduced-motion .nav-cta:hover {
   border-radius: 2px;
 }
 
-/* ---------- Hero ---------- */
-.hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 7rem 2rem 4rem;
+/* ---------- Hero (split + curved sector — galaxy/black toggle on left) ---------- */
+.hero-clip-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
   overflow: hidden;
 }
 
-.hero-bg {
+.hero.hero-split {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  align-items: stretch;
+  min-height: 100vh;
+  padding: 5.5rem 0 2.5rem;
+  overflow: hidden;
+}
+
+.hero-media {
+  position: relative;
+  z-index: 1;
+  min-height: min(100vh, 720px);
+  clip-path: url(#heroSectorClip);
+  -webkit-clip-path: url(#heroSectorClip);
+}
+
+.hero-media .hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-media-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: #0a0a0a;
+  background-size: cover;
+  background-position: center;
+  transition: background 0.45s ease;
+}
+
+body.bg-galaxy .hero-media-bg {
+  background-image: url("assets/milky-way.png");
+  background-color: #000000;
+}
+
+body.bg-black .hero-media-bg {
+  background-image: none;
+  background-color: #0a0a0a;
+}
+
+.hero-media-edge {
   position: absolute;
   inset: 0;
   pointer-events: none;
+  z-index: 2;
+  box-shadow: inset -28px 0 56px rgba(0, 0, 0, 0.42);
+}
+
+.hero-content-panel {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem clamp(1.25rem, 4vw, 3rem);
+  margin-left: -6vw;
+  padding-left: calc(6vw + 1.5rem);
+  background: linear-gradient(168deg, rgba(16, 16, 16, 0.92) 0%, rgba(10, 10, 10, 0.94) 42%, rgba(12, 16, 15, 0.95) 100%);
+  border-left: 1px solid rgba(34, 197, 94, 0.1);
+  box-shadow: -16px 0 48px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px) saturate(1.1);
+  -webkit-backdrop-filter: blur(10px) saturate(1.1);
 }
 
 .hex-grid {
@@ -513,49 +574,41 @@ html.prefers-reduced-motion .hero-buttons-init.revealed {
 .hero-content {
   position: relative;
   z-index: 1;
-  text-align: center;
-  max-width: 720px;
+  text-align: left;
+  max-width: 640px;
+  width: 100%;
+  margin: 0;
 }
 
-.hero-logo {
+.hero-split .hero-logo {
   margin-bottom: 1.5rem;
   background: none;
   border: none;
 }
 
-/* Hero molecular PNG has a dark rectangle: screen-blend on galaxy lets black “show through” to the nebula; soft outer shadow feathers the box edge. */
-.hero-logo-img {
-  width: min(480px, 88vw);
+/* Logo sits on solid content panel — crisp mark + depth (left sector carries galaxy/black) */
+.hero-split .hero-logo-img {
+  width: min(420px, 100%);
   height: auto;
-  max-height: 200px;
+  max-height: 180px;
   object-fit: contain;
-  margin: 0 auto;
+  margin: 0;
   display: block;
   border-radius: 10px;
   mix-blend-mode: normal;
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.06),
-    0 0 36px 14px rgba(0, 0, 0, 0.55),
-    0 0 72px 28px rgba(0, 0, 0, 0.35);
-  filter: drop-shadow(0 6px 28px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 2px rgba(255, 255, 255, 0.1));
+    0 0 32px 12px rgba(0, 0, 0, 0.5),
+    0 0 64px 24px rgba(0, 0, 0, 0.3);
+  filter: drop-shadow(0 6px 24px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 2px rgba(255, 255, 255, 0.08));
 }
 
-body.bg-galaxy .hero-logo-img {
-  mix-blend-mode: screen;
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.05),
-    0 0 48px 18px rgba(0, 0, 0, 0.5),
-    0 0 88px 36px rgba(0, 0, 0, 0.28);
-  filter: drop-shadow(0 8px 40px rgba(0, 0, 0, 0.45)) drop-shadow(0 0 32px rgba(34, 197, 94, 0.12));
+body.bg-galaxy .hero-split .hero-logo-img {
+  filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 28px rgba(34, 197, 94, 0.1));
 }
 
-body.bg-black .hero-logo-img {
-  mix-blend-mode: normal;
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.05),
-    0 0 40px 16px rgba(0, 0, 0, 0.9),
-    0 0 64px 24px rgba(0, 0, 0, 0.65);
-  filter: drop-shadow(0 6px 24px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 1px rgba(255, 255, 255, 0.06));
+body.bg-black .hero-split .hero-logo-img {
+  filter: drop-shadow(0 6px 24px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 1px rgba(255, 255, 255, 0.06));
 }
 
 .hero-title {
@@ -574,8 +627,15 @@ body.bg-black .hero-logo-img {
   margin-bottom: 2.25rem;
   line-height: 1.7;
   max-width: 38em;
-  margin-left: auto;
+  margin-left: 0;
   margin-right: auto;
+}
+
+.hero-split .hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
 }
 
 .hero-buttons {
@@ -2740,7 +2800,54 @@ html.prefers-reduced-motion .fundraising-card--featured:hover {
   }
 }
 
+@media (max-width: 900px) {
+  .hero.hero-split {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(36vh, auto) 1fr;
+    padding: 4.75rem 0 2rem;
+    min-height: unset;
+  }
+
+  .hero-media {
+    clip-path: ellipse(125% 88% at 50% -8%);
+    -webkit-clip-path: ellipse(125% 88% at 50% -8%);
+    min-height: 34vh;
+  }
+
+  .hero-content-panel {
+    margin-left: 0;
+    padding: 2rem 1.5rem 2.5rem;
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    box-shadow: none;
+  }
+
+  .hero-split .hero-content {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-split .hero-logo-img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-split .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-split .hero-sub {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 @media (max-width: 480px) {
+  .hero.hero-split {
+    padding-top: 4.5rem;
+  }
+
   .hero {
     padding: 6rem 1.25rem 3rem;
   }
