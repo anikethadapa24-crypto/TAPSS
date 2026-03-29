@@ -1,7 +1,4 @@
-TAPSS event photos — drop your images here with these names (or update index.html paths):
+TAPSS event photos (bake sale images are in the repo as bake-sale-1.png … bake-sale-4.png).
 
-  bake-sale-1.jpg   — main bake sale photo
-  bake-sale-2.jpg   — optional second angle / table
-  egg-hunt-1.jpg    — Science Spring Egg Hunt (optional)
-
-Use JPG or PNG. Recommended: at least 1200px wide for sharp display on the site.
+Optional for egg hunt section:
+  egg-hunt-1.jpg or .png — add file and update index.html if you have an egg hunt photo.

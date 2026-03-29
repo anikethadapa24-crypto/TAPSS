@@ -865,6 +865,10 @@ img {
   margin-top: 1.5rem;
 }
 
+.fundraising-photos-bake {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .fundraising-photos-single {
   grid-template-columns: 1fr;
   max-width: 520px;
