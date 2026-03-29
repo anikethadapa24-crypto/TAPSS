@@ -435,17 +435,30 @@ img {
 
 .hero-logo {
   margin-bottom: 1.5rem;
+  background: none;
+  border: none;
+  box-shadow: none;
 }
 
-/* Black pixels in the PNG show the page background (galaxy or black) instead of a solid box */
+/* Molecular logo file has a dark surround: on galaxy, blend so black reads as background; on solid black, it matches naturally. Drop-shadow keeps the mark readable without a “tile.” */
 .hero-logo-img {
-  width: min(520px, 92vw);
+  width: min(480px, 88vw);
   height: auto;
-  max-height: 160px;
+  max-height: 200px;
   object-fit: contain;
   margin: 0 auto;
   display: block;
-  mix-blend-mode: screen;
+  mix-blend-mode: normal;
+  filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.65)) drop-shadow(0 0 24px rgba(0, 0, 0, 0.45)) drop-shadow(0 0 2px rgba(255, 255, 255, 0.12));
+}
+
+body.bg-galaxy .hero-logo-img {
+  mix-blend-mode: lighten;
+}
+
+body.bg-black .hero-logo-img {
+  mix-blend-mode: normal;
+  filter: drop-shadow(0 6px 28px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 1px rgba(255, 255, 255, 0.08));
 }
 
 .hero-title {
