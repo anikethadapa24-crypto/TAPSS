@@ -313,4 +313,55 @@
       setTimeout(revealHero, 80);
     }
   });
+
+  // ----- Fundraising photo lightbox (click to enlarge) -----
+  function initFundraisingLightbox() {
+    var root = document.querySelector('.fundraising-section');
+    var lb = document.getElementById('image-lightbox');
+    if (!root || !lb) return;
+
+    var imgEl = lb.querySelector('.image-lightbox-img');
+    var backdrop = lb.querySelector('.image-lightbox-backdrop');
+    var closeBtn = lb.querySelector('.image-lightbox-close');
+    if (!imgEl || !backdrop || !closeBtn) return;
+
+    var prevOverflow = '';
+
+    function openLightbox(src, alt) {
+      imgEl.src = src;
+      imgEl.alt = alt || '';
+      lb.hidden = false;
+      prevOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    }
+
+    function closeLightbox() {
+      lb.hidden = true;
+      imgEl.src = '';
+      imgEl.alt = '';
+      document.body.style.overflow = prevOverflow;
+    }
+
+    root.addEventListener('click', function (e) {
+      var t = e.target;
+      if (!t || t.tagName !== 'IMG') return;
+      if (!t.closest('.fundraising-photo')) return;
+      e.preventDefault();
+      var src = t.currentSrc || t.getAttribute('src') || '';
+      if (!src) return;
+      openLightbox(src, t.getAttribute('alt') || '');
+    });
+
+    closeBtn.addEventListener('click', closeLightbox);
+    backdrop.addEventListener('click', closeLightbox);
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !lb.hidden) {
+        closeLightbox();
+      }
+    });
+  }
+
+  initFundraisingLightbox();
 })();
